@@ -2,8 +2,8 @@ package;
 
 import kha.Game;
 
-class Empty extends Game {
+class Mash extends Game {
 	public function new() {
-		super("Empty", false);
+		super("Mash", false);
 	}
 }
