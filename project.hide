@@ -2,7 +2,7 @@
      "type" : 2
     ,"target" : 1
     ,"name" : "Mash"
-    ,"main" : "build\\project-html5.hxml"
+    ,"main" : "build\\project-flash.hxml"
     ,"projectPackage" : ""
     ,"company" : ""
     ,"license" : ""
@@ -54,34 +54,52 @@
             ,"activeLine" : 11
         }
         ,{
-             "path" : "project.kha"
-            ,"useTabs" : true
-            ,"indentSize" : 4
-            ,"foldedRegions" : [
-
-            ]
-            ,"activeLine" : 0
-        }
-        ,{
-             "path" : "build\\project-html5.hxml"
-            ,"useTabs" : true
-            ,"indentSize" : 4
-            ,"foldedRegions" : [
-
-            ]
-            ,"activeLine" : 5
-        }
-        ,{
              "path" : "build\\project-flash.hxml"
             ,"useTabs" : true
             ,"indentSize" : 4
             ,"foldedRegions" : [
 
             ]
-            ,"activeLine" : 6
+            ,"activeLine" : 7
+        }
+        ,{
+             "path" : "src\\mash\\Mash.hx"
+            ,"useTabs" : true
+            ,"indentSize" : 4
+            ,"foldedRegions" : [
+
+            ]
+            ,"activeLine" : 12
+        }
+        ,{
+             "path" : "src\\mash\\core\\MashEngine.hx"
+            ,"useTabs" : true
+            ,"indentSize" : 4
+            ,"foldedRegions" : [
+
+            ]
+            ,"activeLine" : 2
+        }
+        ,{
+             "path" : "src\\mash\\core\\MashScene.hx"
+            ,"useTabs" : true
+            ,"indentSize" : 4
+            ,"foldedRegions" : [
+
+            ]
+            ,"activeLine" : 26
+        }
+        ,{
+             "path" : "src\\mash\\core\\MashSystem.hx"
+            ,"useTabs" : true
+            ,"indentSize" : 4
+            ,"foldedRegions" : [
+
+            ]
+            ,"activeLine" : 24
         }
     ]
-    ,"activeFile" : "build\\project-html5.hxml"
+    ,"activeFile" : "src\\mash\\core\\MashScene.hx"
     ,"openFLTarget" : null
     ,"openFLBuildMode" : "Debug"
     ,"runActionType" : 1

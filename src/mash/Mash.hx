@@ -3,10 +3,13 @@ package mash;
 import kha.Game;
 import kha.Painter;
 import kha.Color;
+import mash.core.MashEngine;
 
 class Mash extends Game {
 	public function new() {
 		super("Mash", false);
+		
+		new MashEngine();
 		
 		
 	}
