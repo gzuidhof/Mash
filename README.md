@@ -18,7 +18,9 @@ Node-Webkit, with javascript compiled from Haxe. Allows me to benefit from anyth
 
 Logic of games written in Haxe.
 
+**Engine**
 
+Built upon Kha, to allow for targeting everything from html5 to your toaster. Also, no pesky flash imitation.
 
 ====
-Expectation: A lot of work to be done.
+Expectation: This project will need some time.
