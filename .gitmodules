@@ -2,3 +2,6 @@
 	path = Kha
 	url = ../Kha
 	branch = master
+[submodule "Ash-HaXe"]
+        path = Ash
+        url = https://github.com/Rahazan/Ash-HaXe.git
