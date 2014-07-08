@@ -1,0 +1,94 @@
+{
+     "type" : 2
+    ,"target" : 1
+    ,"name" : "Mash"
+    ,"main" : "build\\project-html5.hxml"
+    ,"projectPackage" : ""
+    ,"company" : ""
+    ,"license" : ""
+    ,"url" : ""
+    ,"targetData" : [
+         {
+             "pathToHxml" : "C:\\Users\\Guido\\Documents\\GitHub\\Mash\\build\\project-flash.hxml"
+            ,"runActionType" : 1
+            ,"runActionText" : "bin/Mash.swf"
+        }
+        ,{
+             "pathToHxml" : "javascript.hxml"
+            ,"runActionType" : 1
+            ,"runActionText" : "bin\\index.html"
+        }
+        ,{
+             "pathToHxml" : "neko.hxml"
+            ,"runActionType" : 2
+            ,"runActionText" : "neko bin/Mash.n"
+        }
+        ,{
+             "pathToHxml" : "php.hxml"
+        }
+        ,{
+             "pathToHxml" : "cpp.hxml"
+            ,"runActionType" : 2
+            ,"runActionText" : "bin/Mash-debug.exe"
+        }
+        ,{
+             "pathToHxml" : "java.hxml"
+        }
+        ,{
+             "pathToHxml" : "csharp.hxml"
+        }
+        ,{
+             "pathToHxml" : "python.hxml"
+            ,"runActionType" : 2
+            ,"runActionText" : "python bin/Mash.py"
+        }
+    ]
+    ,"files" : [
+         {
+             "path" : "Sources\\Main.hx"
+            ,"useTabs" : true
+            ,"indentSize" : 4
+            ,"foldedRegions" : [
+
+            ]
+            ,"activeLine" : 11
+        }
+        ,{
+             "path" : "project.kha"
+            ,"useTabs" : true
+            ,"indentSize" : 4
+            ,"foldedRegions" : [
+
+            ]
+            ,"activeLine" : 0
+        }
+        ,{
+             "path" : "build\\project-html5.hxml"
+            ,"useTabs" : true
+            ,"indentSize" : 4
+            ,"foldedRegions" : [
+
+            ]
+            ,"activeLine" : 5
+        }
+        ,{
+             "path" : "build\\project-flash.hxml"
+            ,"useTabs" : true
+            ,"indentSize" : 4
+            ,"foldedRegions" : [
+
+            ]
+            ,"activeLine" : 6
+        }
+    ]
+    ,"activeFile" : "build\\project-html5.hxml"
+    ,"openFLTarget" : null
+    ,"openFLBuildMode" : "Debug"
+    ,"runActionType" : 1
+    ,"runActionText" : "C:\\Users\\Guido\\Documents\\GitHub\\Mash\\build\\flash\\kha.swf"
+    ,"buildActionCommand" : null
+    ,"hiddenItems" : [
+
+    ]
+    ,"showHiddenItems" : false
+}
