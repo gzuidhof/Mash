@@ -20,8 +20,8 @@ class MashSystem extends System
 	public function new(mash:MashEngine) 
 	{
 		this.mashEngine = mash;
-		//this.scene = mash.scene;
-		//this.ash = scene.ash;
+		this.scene = mash.mashScene;
+		this.ash = scene.ash;
 		
 		init();
 		super();

@@ -31,24 +31,28 @@ class MashEngine extends Game
 	public var frameCount : Int = 0;
 	
 	
-	public function new() {
+	public function new() 
+	{
 		super("Mash", false);
 		mashScene = new MashScene(this, "BaseScene");
 		ash = mashScene.ash;
 		
 	}
 	
-	override public function init(): Void { 
+	override public function init(): Void 
+	{ 
 		lastFrameTime = timeSinceStart = Sys.getTime();
 	}
 	
 	
 	
-	override public function update(): Void {
+	override public function update(): Void 
+	{
 		
 	}
 	
-	override public function render(painter: Painter): Void {
+	override public function render(painter: Painter): Void
+	{
 		this.painter = painter;
 		
 		deltaTime = Sys.getTime() - lastFrameTime;
