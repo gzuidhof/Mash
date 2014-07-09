@@ -13,10 +13,10 @@
 	"rooms":
 	[
 
-	]
+	],
 	"sources": 
 	[
-		"../src", 
-		"../Ash/src"
+		"src",
+		"Ash/src"
 	]
 }
