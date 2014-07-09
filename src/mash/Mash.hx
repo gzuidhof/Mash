@@ -1,30 +1,11 @@
 package mash;
 
-import kha.Game;
-import kha.Painter;
-import kha.Color;
 import mash.core.MashEngine;
+import kha.Starter;
 
-class Mash extends Game {
+class Mash {
 	public function new() {
-		super("Mash", false);
-		
-		new MashEngine();
-		
-		
+		var starter = new Starter();
+		starter.start(new MashEngine());
 	}
-	
-	override public function update() : Void {
-		
-	}
-	
-	override public function render(painter: Painter): Void {
-		startRender(painter);
-		
-		painter.setColor(Color.fromBytes(255, 255, 0));
-		painter.fillRect(0, 0, width, height);
-		
-		endRender(painter);
-	}
-	
 }

@@ -14,7 +14,7 @@ class MashSystem extends System
 	
 	public var mashEngine : MashEngine;
 	public var ash : Engine;
-	//public var scene : MashScene;
+	public var scene : MashScene;
 	
 
 	public function new(mash:MashEngine) 
