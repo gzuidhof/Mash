@@ -22,12 +22,11 @@ class ImageRenderSystem extends MashSystem
 
 	}
 	
-	override public function update(dt)
+	override public function update(dt: Float)
 	{
 		
 		for (node in ash.getNodeList(ImageNode))
 		{
-			var entity : Entity = node.entity;
 			mashEngine.painter.drawImage(node.image, node.position.x, node.position.y);
 		}
 		
