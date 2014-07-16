@@ -30,6 +30,6 @@
 	"sources": 
 	[
 		"src",
-		"Ash/src"
+		"lib/Ash/src"
 	]
 }
