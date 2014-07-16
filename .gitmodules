@@ -1,6 +1,6 @@
-[submodule "Ash-HaXe"]
-        path = Ash
-        url = https://github.com/Rahazan/Ash-HaXe.git
-[submodule "Kha"]
-	path = Kha
+[submodule "lib/Ash"]
+	path = lib/Ash
+	url = https://github.com/Rahazan/Ash-HaXe.git
+[submodule "lib/Kha"]
+	path = lib/Kha
 	url = https://github.com/KTXSoftware/Kha.git
