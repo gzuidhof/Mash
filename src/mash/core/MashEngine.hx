@@ -1,11 +1,16 @@
 package mash.core;
 
 import ash.core.Engine;
+import ash.core.Entity;
 import haxe.Int64;
 import kha.Game;
 import kha.Painter;
 import kha.Color;
 import kha.Sys;
+import kha.Loader;
+import mash.component.ImageDisplay;
+import mash.component.Position;
+import mash.system.ImageRenderSystem;
 
 class MashEngine extends Game
 {
@@ -37,11 +42,37 @@ class MashEngine extends Game
 		mashScene = new MashScene(this, "BaseScene");
 		ash = mashScene.ash;
 		
+		//Loader.the.loadRoom("level", init);
+		//trace("asdf");
+		//Loader.the.loadImage("lambda", null);
+		//Loader.the.loadProject(init);
+		
+		
+		
+		
+		
+		
+		
 	}
+	
 	
 	override public function init(): Void 
 	{ 
+		Loader.the.loadRoom("level", levelLoaded);
+	}
+	
+	private function levelLoaded(): Void 
+	{
 		lastFrameTime = timeSinceStart = Sys.getTime();
+		
+		ash.addSystem(new ImageRenderSystem(this), 0);
+		var ent: Entity = new Entity("Test Lambda");
+		ent.add(new Position(5, 0));
+		ent.add(new ImageDisplay("lambda"));
+		ash.addEntity(ent);
+		
+		for (s in Loader.the.getAvailableImages())
+			trace(s);
 	}
 	
 	

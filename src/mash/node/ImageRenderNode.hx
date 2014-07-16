@@ -2,7 +2,7 @@ package mash.node;
 import ash.core.Node;
 import mash.component.Position;
 
-import mash.component.Image;
+import mash.component.ImageDisplay;
 
 
 /**
@@ -11,6 +11,6 @@ import mash.component.Image;
  */
 class ImageRenderNode extends Node<ImageRenderNode>
 {
-	public var image: Image;
+	public var imageDisplay: ImageDisplay;
 	public var position: Position;
 }

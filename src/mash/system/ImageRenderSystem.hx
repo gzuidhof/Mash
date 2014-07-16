@@ -1,9 +1,12 @@
 package mash.system;
 
 import ash.core.Entity;
+import kha.Image;
+import kha.Loader;
 import mash.core.MashSystem;
 import mash.core.MashEngine;
-import mash.component.Image;
+import mash.component.ImageDisplay;
+import mash.node.ImageRenderNode;
 import mash.component.Position;
 import mash.component.Rotation;
 
@@ -11,7 +14,10 @@ import mash.component.Rotation;
 
 class ImageRenderSystem extends MashSystem
 {
-
+	
+	private var images: Map<String, Image>;
+	
+	
 	public function new(mash:MashEngine)
 	{ 
 		super(mash); 
@@ -19,15 +25,22 @@ class ImageRenderSystem extends MashSystem
 	
 	override public function init()
 	{
-
+		images = new Map<String, Image>();
+		ash.getNodeList(ImageRenderNode).nodeAdded.add(onImageRenderNodeAdded);
 	}
+	
+	private function onImageRenderNodeAdded(node: ImageRenderNode): Void 
+	{
+		if (!images.exists(node.imageDisplay.imageName))
+			images.set(node.imageDisplay.imageName, Loader.the.getImage(node.imageDisplay.imageName));
+	}
+	
 	
 	override public function update(dt: Float)
 	{
-		
-		for (node in ash.getNodeList(ImageNode))
+		for (node in ash.getNodeList(ImageRenderNode))
 		{
-			mashEngine.painter.drawImage(node.image, node.position.x, node.position.y);
+			mashEngine.painter.drawImage(images.get(node.imageDisplay.imageName), node.position.x, node.position.y);
 		}
 		
 	}
