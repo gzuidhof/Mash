@@ -32,7 +32,10 @@ class ImageRenderSystem extends MashSystem
 	private function onImageRenderNodeAdded(node: ImageRenderNode): Void 
 	{
 		if (!images.exists(node.imageDisplay.imageName))
-			images.set(node.imageDisplay.imageName, Loader.the.getImage(node.imageDisplay.imageName));
+		{
+			var image: Image = Loader.the.getImage(node.imageDisplay.imageName);
+			images.set(node.imageDisplay.imageName, image);
+		}
 	}
 	
 	
