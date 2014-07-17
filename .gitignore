@@ -1,3 +1,10 @@
-
+*.n
+*.swf
+*.build
+/test/build
 /build
 /kake.lua
+
+.DS_Store
+Thumbs.db
+.tm*
