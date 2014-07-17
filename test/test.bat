@@ -1,1 +1,2 @@
 haxe test.hxml
+pause
