@@ -1,7 +1,7 @@
 Mash
 ====
 
-Mash, 2D Game Engine with Ash Entity System Framework
+Mash, 2D Game Engine with [Ash](http://www.ashframework.org/) Entity System Framework
 
 
 ====
@@ -20,7 +20,7 @@ Logic of games written in Haxe.
 
 **Engine**
 
-Built upon Kha, to allow for targeting everything from html5 to your toaster. Also, no pesky flash imitation.
+Built upon [Kha](https://github.com/KTXSoftware/Kha), to allow for targeting everything from html5 to your toaster. Also, no pesky flash imitation.
 
 ====
 Expectation: This project will need some time.
