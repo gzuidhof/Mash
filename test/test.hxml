@@ -1,3 +1,4 @@
+--macro include('mash', true)
 -cp ../src
 -cp ../Kha/Sources
 -cp ../Kha/Backends/HTML5

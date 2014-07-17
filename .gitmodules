@@ -4,3 +4,6 @@
 [submodule "Kha"]
 	path = Kha
 	url = https://github.com/KTXSoftware/Kha.git
+[submodule "lib/hx-yaml"]
+	path = lib/hx-yaml
+	url = https://github.com/mikestead/hx-yaml.git
