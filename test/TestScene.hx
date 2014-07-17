@@ -4,28 +4,9 @@ import ash.core.Node;
 import haxe.unit.TestCase;
 import mash.core.MashScene;
 import mash.core.MashSystem;
-
-
-class TestComponentA 
-{
-	public function new() {}
-	var fieldA: Int;
-}
-class TestComponentB 
-{
-	public function new() {}
-	
-	var fieldA: String;
-	var fieldB: Int;
-}
-
-class TestNode extends Node<TestNode>
-{
-	var componentA: TestComponentA;
-	var componentB: TestComponentB;
-}
-
-
+import TestTypes.TestComponentA;
+import TestTypes.TestComponentB;
+import TestTypes.TestNode;
 
 class TestScene extends TestCase
 {
