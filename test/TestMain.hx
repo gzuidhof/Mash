@@ -11,7 +11,10 @@ class TestMain {
         r.run();
 		
 		#if js
-		untyped __js__("phantom.exit();");
+		if (r.result.success)
+			untyped __js__("phantom.exit(0);");
+		else
+			untyped __js__("phantom.exit(1);");
 		#end
     }
 }
