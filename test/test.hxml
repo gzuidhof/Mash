@@ -4,5 +4,4 @@
 -cp ../lib/Ash/src
 -js build/html5/test.js
 -main TestMain
--cmd echo "phantom.exit();" >> bin/Main.js
 -cmd phantomjs build/html5/test.js

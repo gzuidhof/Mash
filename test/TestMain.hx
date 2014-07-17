@@ -9,5 +9,9 @@ class TestMain {
 
         // Run the tests
         r.run();
+		
+		#if js
+		untyped __js__("phantom.exit();");
+		#end
     }
 }
