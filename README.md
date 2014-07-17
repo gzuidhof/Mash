@@ -2,8 +2,7 @@ Mash
 ====
 
 Mash, 2D Game Engine with [Ash](http://www.ashframework.org/) Entity System Framework
-
-
+[![Build Status](https://travis-ci.org/Rahazan/Mash.svg?branch=master)](https://travis-ci.org/Rahazan/Mash)
 ====
 Planned features:
 
