@@ -3,6 +3,7 @@
 -cp ../Kha/Sources
 -cp ../Kha/Backends/HTML5
 -cp ../lib/Ash/src
+-cp ../lib/hx-yaml/src
 -js build/html5/test.js
 -main TestMain
 -cmd phantomjs build/html5/test.js

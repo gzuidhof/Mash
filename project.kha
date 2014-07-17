@@ -31,5 +31,6 @@
 	[
 		"src",
 		"lib/Ash/src"
+		"lib/hx-yaml/src"
 	]
 }
