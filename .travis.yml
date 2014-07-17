@@ -12,4 +12,4 @@ before_script:
  
 # Run the test!
 script:
-  - haxe test/travis.hxml
+  - haxe test/test.hxml
