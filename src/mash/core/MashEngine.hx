@@ -39,7 +39,7 @@ class MashEngine extends Game
 	public function new() 
 	{
 		super("Mash", false);
-		mashScene = new MashScene(this, "BaseScene");
+		mashScene = new MashScene("BaseScene");
 		ash = mashScene.ash;
 		
 		//Loader.the.loadRoom("level", init);
