@@ -2,6 +2,6 @@
 -cp ../Kha/Sources
 -cp ../Kha/Backends/HTML5
 -cp ../lib/Ash/src
--js build/test.js
+-js build/html5/test.js
 -main TestMain
--cmd phantomjs build/test.js
+-cmd phantomjs build/html5/test.js
