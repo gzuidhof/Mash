@@ -12,29 +12,29 @@ class TestComponentA
 {
 	public function new(?a) { fieldA = a; }
 	
-	var fieldA: Int;
+	public var fieldA: Int;
 }
 
 class TestComponentB 
 {
 	public function new(?a, ?b) { fieldA = a; fieldB = b; }
 	
-	var fieldA: String;
-	var fieldB: Int;
+	public var fieldA: String;
+	public var fieldB: Int;
 }
 
 class TestComponentC 
 {
-	public function new(?a, ?d) { referenceToA = a; referenceToD = d; }
+	public function new(a, d) { referenceToA = a; referenceToD = d; }
 	
-	var referenceToA: TestComponentA;
-	var referenceToD: TestComponentD;
+	public var referenceToA: TestComponentA;
+	public var referenceToD: TestComponentD;
 }
 
 class TestComponentD 
 {
-	public function new(?a, ?c) { fieldA = a; referenceToC = c; }
+	public function new(a, c) { fieldA = a; referenceToC = c; }
 	
-	var fieldA: String;
-	var referenceToC: TestComponentC;
+	public var fieldA: String;
+	public var referenceToC: TestComponentC;
 }
