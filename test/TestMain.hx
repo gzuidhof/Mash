@@ -5,7 +5,7 @@ class TestMain {
     static function main(){
         var r = new haxe.unit.TestRunner();
         r.add(new TestScene());
-		
+		r.add(new TestSerialization());
         // Run the tests
         r.run();
 		
