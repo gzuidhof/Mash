@@ -35,17 +35,17 @@ class TestSerialization extends TestCase
 			.add(new TestComponentB("Some String On Entity 3"));
 		
 		simpleScene.ash.getEntityByName("Entity 7")
-		.add(new TestComponentB("Some Other String On Entity 7"));
+			.add(new TestComponentB("Some Other String On Entity 7"));
 		
 	}
 	
 	public function testSerializers() 
 	{
 		//Test Empty Scene assumptions before any serialization
-		emptySceneAssumptions(emptyScene);
+		emptySceneAssertions(emptyScene);
 		
 		//Test Simple Scene assumptions before any serialization
-		simpleSceneAssumptions(simpleScene);
+		simpleSceneAssertions(simpleScene);
 		
 		//Test the HaxeStd Serializer
 		serializerTest(new HaxeStdSerializer());
@@ -55,29 +55,29 @@ class TestSerialization extends TestCase
 	{
 		if (serializer == null) return;
 		
-		trace ("Testing empty scene");
-		
+		trace ("Testing empty scene Serialization");
+
 		//Test empty scene
 		var fileEmpty:String = serializer.serializeScene(emptyScene);
 		var deserializedEmpty:MashScene = serializer.deSerializeScene(fileEmpty);
-		emptySceneAssumptions(deserializedEmpty);
+		emptySceneAssertions(deserializedEmpty);
 		
-		trace("Testing simple scene");
+		trace("Testing simple scene Serialization");
 		
 		//Test simple scene
 		var fileSimple:String = serializer.serializeScene(simpleScene);
 		var deserializedSimple:MashScene = serializer.deSerializeScene(fileSimple);
-		simpleSceneAssumptions(simpleScene);
+		simpleSceneAssertions(simpleScene);
 	}
 	
 	
-	private function emptySceneAssumptions(scene : MashScene) : Void
+	private function emptySceneAssertions(scene : MashScene) : Void
 	{
 		assertEquals("Empty Serialization Test Scene",scene.name);
 		assertEquals(0, Lambda.count(scene.ash.entities));
 	}
 	
-	private function simpleSceneAssumptions(scene : MashScene) : Void
+	private function simpleSceneAssertions(scene : MashScene) : Void
 	{
 		assertEquals("Simple Serialization Test Scene",scene.name);
 		assertEquals(10, Lambda.count(scene.ash.entities));
