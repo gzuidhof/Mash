@@ -1,6 +1,7 @@
 package mash.core;
 
 import ash.core.Engine;
+import ash.core.Entity;
 
 /**
 * @author 
@@ -22,6 +23,5 @@ class MashScene
 	{
 		ash.update(deltaTime);
 	}	
-	
 	
 }
