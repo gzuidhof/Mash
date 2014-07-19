@@ -2,6 +2,8 @@ package ;
 
 import haxe.unit.TestCase;
 import mash.core.MashScene;
+import mash.serialization.system.SystemSerializer;
+import mash.serialization.system.YamlSystemSerializer;
 import TestTypes.TestSystemA;
 import TestTypes.TestSystemB;
 import TestTypes.TestSystemC;
@@ -26,6 +28,14 @@ class TestSystemSerialization extends TestCase
 	public function testSystemSerialization() 
 	{
 		sceneAssertions(testScene);
+		
+		var serializer:SystemSerializer = new YamlSystemSerializer();
+		var output = serializer.serializeSystems(testScene);
+		
+		var newScene = new MashScene("New Scene");
+		serializer.deSerializeSystems(output, newScene);
+		sceneAssertions(newScene);
+		
 	}
 	
 	public function sceneAssertions(scene: MashScene)
