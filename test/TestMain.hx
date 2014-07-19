@@ -17,5 +17,7 @@ class TestMain {
 		else
 			untyped __js__("phantom.exit(1);");
 		#end
+		
+		Sys.exit(r.result.success ? 0 : 1)
     }
 }
