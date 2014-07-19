@@ -2,7 +2,7 @@ mkdir build
 cd build
 mkdir html5
 mkdir neko
-mkdir java
+mkdir flash
 cd ..
 haxe test.hxml
 pause

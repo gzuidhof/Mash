@@ -6,7 +6,8 @@
 -cp ../lib/hx-yaml/src
 -js build/html5/test.js
 -main TestMain
--cmd phantomjs build/html5/test.js
+#-cmd (phantomjs build/html5/test.js && echo "JS tests done, Neko is next.")
+-cmd (echo Testing html5 target. && phantomjs build/html5/test.js)
 
 --next
 
@@ -18,16 +19,22 @@
 -cp ../lib/hx-yaml/src
 -neko build/neko/test.n
 -main TestMain
--cmd neko build/neko/test.n
+-cmd (echo Testing neko target. && neko build/neko/test.n)
 
 --next
 
---macro include('mash', true)
+#--macro include('mash', true)
 -cp ../src
 -cp ../Kha/Sources
--cp ../Kha/Backends/Java
+-cp ../Kha/Backends/Flash
 -cp ../lib/Ash/src
 -cp ../lib/hx-yaml/src
--java build/java/test.jar
+-swf build/flash/test.swf
+-swf-version 11.6
 -main TestMain
--cmd java build/java/test.jar
+-cmd echo Flash target succesfully compiled.
+
+
+
+
+
