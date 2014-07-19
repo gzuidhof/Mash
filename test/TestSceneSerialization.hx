@@ -39,8 +39,16 @@ class TestSceneSerialization extends TestCase
 	}
 	
 	
-	public function testSceneSerializers() 
+	public function testHaxeStdSerializer() 
 	{
+		//Test the HaxeStd Serializer
+		serializerTest(new HaxeStdSceneSerializer());
+	}
+	
+	private function serializerTest(serializer:SceneSerializer)
+	{
+		if (serializer == null) return;
+		
 		//Test Empty Scene assertions before any serialization
 		emptySceneAssertions(emptyScene);
 		
@@ -49,14 +57,6 @@ class TestSceneSerialization extends TestCase
 		
 		//Test Complex Scene assertions before any serialization
 		complexSceneAssertions(complexScene);
-		
-		//Test the HaxeStd Serializer
-		serializerTest(new HaxeStdSceneSerializer());
-	}
-	
-	private function serializerTest(serializer:SceneSerializer)
-	{
-		if (serializer == null) return;
 		
 		trace ("Testing Empty Scene Serialization");
 

@@ -7,7 +7,7 @@
 -js build/html5/test.js
 -main TestMain
 #-cmd (phantomjs build/html5/test.js && echo "JS tests done, Neko is next.")
--cmd (echo Testing html5 target. && phantomjs build/html5/test.js)
+-cmd (echo ## Testing html5 target. ## && phantomjs build/html5/test.js)
 
 --next
 
@@ -19,7 +19,7 @@
 -cp ../lib/hx-yaml/src
 -neko build/neko/test.n
 -main TestMain
--cmd (echo Testing neko target. && neko build/neko/test.n)
+-cmd (echo ## Testing neko target. ## && neko build/neko/test.n)
 
 --next
 
@@ -32,7 +32,7 @@
 -swf build/flash/test.swf
 -swf-version 11.6
 -main TestMain
--cmd echo Flash target succesfully compiled.
+-cmd echo ## Flash target succesfully compiled. ##
 
 
 
