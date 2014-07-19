@@ -11,7 +11,7 @@ import TestTypes.TestComponentC;
 import TestTypes.TestComponentD;
 
 
-class TestSerialization extends TestCase
+class TestSceneSerialization extends TestCase
 {
 
 	
@@ -39,9 +39,7 @@ class TestSerialization extends TestCase
 	}
 	
 	
-	
-	
-	public function testSerializers() 
+	public function testSceneSerializers() 
 	{
 		//Test Empty Scene assertions before any serialization
 		emptySceneAssertions(emptyScene);
@@ -171,7 +169,6 @@ class TestSerialization extends TestCase
 		assertEquals(entity2.get(TestComponentD).referenceToC.referenceToD.referenceToC, entity3.get(TestComponentC));
 		
 	}
-
 
 	
 }

@@ -1,6 +1,8 @@
 package ;
 
 import ash.core.Node;
+import mash.core.MashScene;
+import mash.core.MashSystem;
 
 class TestNode extends Node<TestNode>
 {
@@ -39,3 +41,28 @@ class TestComponentD
 	
 	public var referenceToC: TestComponentC;
 }
+
+class TestSystemA extends MashSystem
+{
+	public function new() 
+	{
+		super(null);
+	}
+}
+
+class TestSystemB extends MashSystem
+{
+	public function new() 
+	{
+		super(null);
+	}
+}
+
+class TestSystemC extends MashSystem
+{
+	public function new() 
+	{
+		super(null);
+	}
+}
+
