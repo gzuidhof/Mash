@@ -3,7 +3,7 @@ package ;
 import ash.core.Entity;
 import haxe.unit.TestCase;
 import mash.core.MashScene;
-import mash.serialization.HaxeStdSerializer;
+import mash.serialization.HaxeStdSceneSerializer;
 import mash.serialization.SceneSerializer;
 import TestTypes.TestComponentA;
 import TestTypes.TestComponentB;
@@ -53,7 +53,7 @@ class TestSerialization extends TestCase
 		complexSceneAssertions(complexScene);
 		
 		//Test the HaxeStd Serializer
-		serializerTest(new HaxeStdSerializer());
+		serializerTest(new HaxeStdSceneSerializer());
 	}
 	
 	private function serializerTest(serializer:SceneSerializer)
