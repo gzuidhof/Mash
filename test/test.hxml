@@ -7,3 +7,27 @@
 -js build/html5/test.js
 -main TestMain
 -cmd phantomjs build/html5/test.js
+
+--next
+
+--macro include('mash', true)
+-cp ../src
+-cp ../Kha/Sources
+-cp ../Kha/Backends/Kore
+-cp ../lib/Ash/src
+-cp ../lib/hx-yaml/src
+-neko build/neko/test.n
+-main TestMain
+-cmd neko build/neko/test.n
+
+--next
+
+--macro include('mash', true)
+-cp ../src
+-cp ../Kha/Sources
+-cp ../Kha/Backends/Java
+-cp ../lib/Ash/src
+-cp ../lib/hx-yaml/src
+-java build/java/test.jar
+-main TestMain
+-cmd java build/java/test.jar

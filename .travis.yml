@@ -9,9 +9,12 @@ before_script:
     - sudo apt-get install haxe -y
     - mkdir -p ~/.haxe/lib
     - haxelib setup ~/.haxe/lib
+	- haxelib install hxjava
     - cd test
     - mkdir build
     - mkdir build/html5
+	- mkdir build/neko
+	- mkdir build/java
  
 # Run the test!
 script:
