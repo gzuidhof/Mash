@@ -8,11 +8,7 @@ import kha.Loader;
 class Mash {
 	public function new() {
 		var starter = new Starter();
-		
-		//starter.start(new TestGame());
 		starter.start(new MashEngine());
-		
-		
 	}
 }
 

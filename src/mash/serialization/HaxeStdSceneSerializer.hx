@@ -8,7 +8,7 @@ import ash.core.Entity;
  * ...
  * @author Guido
  */
-class HaxeStdSerializer implements SceneSerializer
+class HaxeStdSceneSerializer implements SceneSerializer
 {
 	
 	public function new() 

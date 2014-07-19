@@ -95,9 +95,4 @@ class MashEngine extends Game
 		
 		frameCount++;
 	}
-	
-	
-	
-	
-	
 }

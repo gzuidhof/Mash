@@ -36,5 +36,6 @@ class TestComponentD
 	public function new(a, c) { fieldA = a; referenceToC = c; }
 	
 	public var fieldA: String;
+	
 	public var referenceToC: TestComponentC;
 }

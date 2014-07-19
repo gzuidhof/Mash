@@ -56,7 +56,6 @@ class TestScene extends TestCase
 		
 		//Test adding component
 		var component: TestComponentA = new TestComponentA();
-		
 		tEntity1.add(component);
 		assertEquals(1, componentCount(tEntity1));
 		
@@ -68,7 +67,6 @@ class TestScene extends TestCase
 		tEntity1.remove(TestComponentA);
 		assertEquals(0, componentCount(tEntity1));
 		assertFalse(tEntity1.has(TestComponentA));
-		
 		
 	}
 	
