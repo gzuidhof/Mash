@@ -18,6 +18,8 @@ class TestMain {
 			untyped __js__("phantom.exit(1);");
 		#end
 		
-		Sys.exit(r.result.success ? 0 : 1)
+		#if (!flash && !js)
+		Sys.exit(r.result.success ? 0 : 1);
+		#end
     }
 }
