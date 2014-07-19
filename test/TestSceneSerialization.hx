@@ -137,7 +137,6 @@ class TestSceneSerialization extends TestCase
 		entity1.add(new TestComponentD("Some String On Entity 1", null));
 		
 		//Single direction reference
-		
 		entity4.add(new TestComponentC(entity1.get(TestComponentA), null));
 		
 		//Circular reference
