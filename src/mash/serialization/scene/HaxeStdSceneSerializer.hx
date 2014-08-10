@@ -1,4 +1,4 @@
-package mash.serialization;
+package mash.serialization.scene;
 import haxe.Serializer;
 import haxe.Unserializer;
 import mash.core.MashScene;

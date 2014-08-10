@@ -19,6 +19,7 @@ class TestSystemSerialization extends TestCase
 	
 	public override function setup()
 	{
+		//First create the scene, with some systems, to be serialized.
 		testScene = new MashScene("TestScene");
 		testScene.ash.addSystem(new TestSystemA(), 1);
 		testScene.ash.addSystem(new TestSystemB(), 0);
@@ -27,6 +28,7 @@ class TestSystemSerialization extends TestCase
 	
 	public function testSystemSerialization() 
 	{
+		//See if the assertions hold before serialization/deserialization
 		sceneAssertions(testScene);
 		
 		var serializer:SystemSerializer = new YamlSystemSerializer();
@@ -34,6 +36,8 @@ class TestSystemSerialization extends TestCase
 		
 		var newScene = new MashScene("New Scene");
 		serializer.deSerializeSystems(output, newScene);
+		
+		//See if the assertions hold after serialization/deserialization
 		sceneAssertions(newScene);
 		
 	}
