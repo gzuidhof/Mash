@@ -24,7 +24,7 @@ class YamlSystemSerializer implements SystemSerializer
 		
 		var output = Yaml.render( { systems: array } );
 		
-				//trace(output);
+		//trace(output);
 		/*
 		systems:
           - name: TestSystemB
