@@ -7,3 +7,9 @@
 [submodule "lib/hx-yaml"]
 	path = lib/hx-yaml
 	url = https://github.com/mikestead/hx-yaml.git
+[submodule "lib/mcli"]
+	path = lib/mcli
+	url = https://github.com/waneck/mcli.git
+[submodule "lib/MassiveLib"]
+	path = lib/MassiveLib
+	url = https://github.com/massiveinteractive/MassiveLib.git
