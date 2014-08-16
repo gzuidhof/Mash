@@ -13,7 +13,7 @@ class MashSystem extends System
 {
 	
 	public var mashEngine : MashEngine;
-	public var ash : Engine;
+	public var ecs : Engine;
 	public var scene : MashScene;
 	
 
@@ -24,7 +24,7 @@ class MashSystem extends System
 		if ( mash != null) 
 		{
 			this.scene = mash.mashScene;
-			this.ash = scene.ash;
+			this.ecs = scene.ash;
 		}
 		
 		init();

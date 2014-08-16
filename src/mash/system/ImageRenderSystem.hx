@@ -26,7 +26,7 @@ class ImageRenderSystem extends MashSystem
 	override public function init()
 	{
 		images = new Map<String, Image>();
-		ash.getNodeList(ImageRenderNode).nodeAdded.add(onImageRenderNodeAdded);
+		ecs.getNodeList(ImageRenderNode).nodeAdded.add(onImageRenderNodeAdded);
 	}
 	
 	private function onImageRenderNodeAdded(node: ImageRenderNode): Void 
@@ -41,7 +41,7 @@ class ImageRenderSystem extends MashSystem
 	
 	override public function update(dt: Float)
 	{
-		for (node in ash.getNodeList(ImageRenderNode))
+		for (node in ecs.getNodeList(ImageRenderNode))
 		{
 			mashEngine.painter.drawImage(images.get(node.imageDisplay.imageName), node.position.x, node.position.y);
 		}
