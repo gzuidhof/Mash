@@ -16,7 +16,7 @@ class MashEngine extends Game
 {
 	
 	public var mashScene : MashScene;
-	public var ash : Engine;
+	public var ecs : Engine;
 	public var painter : Painter;
 	
 	/**
@@ -40,7 +40,7 @@ class MashEngine extends Game
 	{
 		super("Mash", false);
 		mashScene = new MashScene("BaseScene");
-		ash = mashScene.ash;
+		ecs = mashScene.ash;
 		
 		//Loader.the.loadRoom("level", init);
 		//trace("asdf");
@@ -65,11 +65,11 @@ class MashEngine extends Game
 	{
 		lastFrameTime = timeSinceStart = Sys.getTime();
 		
-		ash.addSystem(new ImageRenderSystem(this), 0);
+		ecs.addSystem(new ImageRenderSystem(this), 0);
 		var ent: Entity = new Entity("Test Lambda");
 		ent.add(new Position(5, 0));
 		ent.add(new ImageDisplay("lambda"));
-		ash.addEntity(ent);
+		ecs.addEntity(ent);
 		
 		for (s in Loader.the.getAvailableImages())
 			trace(s);
