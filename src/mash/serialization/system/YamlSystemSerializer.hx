@@ -35,7 +35,6 @@ class YamlSystemSerializer implements SystemSerializer
 		*/
 		
 		return output;
-		
 	}
 	
 	public function deSerializeSystems(text:String, scene:MashScene):Void 
