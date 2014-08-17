@@ -1,6 +1,6 @@
 package;
 
-class TestMain {
+class TestProjectToolsMain {
     
     static function main(){
         var r = new haxe.unit.TestRunner();

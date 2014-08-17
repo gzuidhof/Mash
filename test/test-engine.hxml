@@ -5,7 +5,7 @@
 -cp ../lib/Ash/src
 -cp ../lib/hx-yaml/src
 -js build/html5/test.js
--main TestMain
+-main TestEngineMain
 -cmd (echo __ Testing html5 target. __ && phantomjs build/html5/test.js)
 
 --next
@@ -17,7 +17,7 @@
 -cp ../lib/Ash/src
 -cp ../lib/hx-yaml/src
 -neko build/neko/test.n
--main TestMain
+-main TestEngineMain
 -cmd (echo __ Testing neko target. __ && neko build/neko/test.n)
 
 --next
@@ -30,5 +30,5 @@
 -cp ../lib/hx-yaml/src
 -swf build/flash/test.swf
 -swf-version 11.6
--main TestMain
+-main TestEngineMain
 -cmd echo __ Flash target succesfully compiled. __

@@ -1,4 +1,4 @@
 test-engine.hxml
 --next
-../tools/MashProjectTools/test/test-projecttools.hxml
+test-tools.hxml
 
