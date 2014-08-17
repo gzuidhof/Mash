@@ -9,3 +9,5 @@
 Thumbs.db
 .tm*
 .hxproj
+.sublime-project
+.sublime-workspace
