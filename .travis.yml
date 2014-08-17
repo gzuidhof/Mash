@@ -21,4 +21,4 @@ before_script:
  
 # Run the test!
 script:
-  - haxe build.hxml
+  - haxe test.hxml
