@@ -6,7 +6,6 @@
 -cp ../lib/hx-yaml/src
 -js build/html5/test.js
 -main TestMain
-#-cmd (phantomjs build/html5/test.js && echo "JS tests done, Neko is next.")
 -cmd (echo __ Testing html5 target. __ && phantomjs build/html5/test.js)
 
 --next
@@ -23,7 +22,7 @@
 
 --next
 
-#--macro include('mash', true)
+--macro include('mash', true)
 -cp ../src
 -cp ../Kha/Sources
 -cp ../Kha/Backends/Flash
