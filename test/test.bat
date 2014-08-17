@@ -4,5 +4,5 @@ mkdir html5
 mkdir neko
 mkdir flash
 cd ..
-haxe build.hxml
+haxe test.hxml
 pause

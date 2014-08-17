@@ -1,8 +1,0 @@
-default:
-  name: "Test Project"
-  width: 800
-  height: 600
-mobile:
-  width: 480
-ios:
-  height: 500

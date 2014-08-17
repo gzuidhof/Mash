@@ -1,8 +1,0 @@
--cp ../tools/MashProjectTools/test
--cp ../tools/MashProjectTools/src
--cp ../lib/mcli
--cp ../lib/MassiveLib/src
--cp ../lib/hx-yaml/src
--main TestProjectToolsMain
--neko build/neko/projecttoolstest.n
--cmd (echo "__ Testing Mash Project Tools. __" && neko build/neko/projecttoolstest.n)

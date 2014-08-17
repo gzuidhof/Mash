@@ -1,9 +1,0 @@
--cp src
--cp ../../lib/mcli
--cp ../../lib/MassiveLib/src
--cp ../../lib/hx-yaml/src
--D use_rtti_doc
--neko bin/mashprojecttools.n
--main MashProjectTools
-
-
