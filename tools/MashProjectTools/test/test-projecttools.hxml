@@ -4,4 +4,4 @@
 -cp ../../../lib/hx-yaml/src
 -main TestProjectToolsMain
 -neko build/projecttoolstest.n
--cmd (echo "__ Testing Mash Project Tools. __" && neko build/projecttoolstest.n)
+-cmd (echo __ Testing Mash Project Tools. __ && neko build/projecttoolstest.n)

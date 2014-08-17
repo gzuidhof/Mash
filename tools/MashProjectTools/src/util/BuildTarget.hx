@@ -34,11 +34,11 @@ enum Target
 
 class BuildTarget 
 {
-	public static function getLessSpecificTarget(value:Target)
+	public static function getLessSpecificTarget(value:Target): Target
 	{
 		//TODO: Find a cleaner way to represent this in code.
-		if (value == Target.windows || value == Target.linux || value == Target.osx)
-			return Target.standalone;
+		if (value == Target.Windows || value == Target.Linux || value == Target.OSX)
+			return Target.Standalone;
 		
 		else if (value == Target.iOS || value == Target.Android || value == Target.Dalvik || value == Target.WindowsRT)
 			return Target.Mobile;

@@ -10,26 +10,33 @@ class ProjectFileReader
 
 	private var path : String;
 	private var parsedYaml : AnyObjectMap;
+	private var buildTarget : Target;
 	
 	/**Platform-root it will attempt, in given order.
 	 * Always ends with "default"
 	 * Example ["osx", "standalone", "default"] for osx platform
 	*/
-	private var rootOrder : List<String>();
+	private var rootOrder : List<String>;
 	
 	
-	public function new(filePath : String, ?buildTarget = Target.None : Target) 
+	public function new(filePath : String, ?buildTarget = null) 
 	{
+		if (buildTarget == null) buildTarget = Target.None;
+		this.buildTarget = buildTarget;
+
 		setPath(filePath);
+	}
+	
+	/**
+	 * Reads the project.yaml file into memory.
+	 */
+	public function read() : Void
+	{
+		parsedYaml = Yaml.read(path);
 		buildRootOrder(buildTarget);
 		stripRootOrder();
 	}
-	
-	public function setPath(filePath : String)
-	{
-		path = filePath;
-	}
-	
+
 	/**
 	 * Fills the root order, the order in which the project file reader is to try to find keyvalues.
 	 * For example: In an android project it would first want to look under the "android" root, 
@@ -39,16 +46,16 @@ class ProjectFileReader
 	private function buildRootOrder(buildTarget : Target)
 	{
 		
-		rootOrder = new Array<String>();
-		currentTarget = buildTarget;
+		rootOrder = new List<String>();
+		var currentTarget = buildTarget;
 		
 		while (currentTarget != Target.None) 
 		{
-			rootOrder.push(currentTarget.getName().toString());
+			rootOrder.add(currentTarget.getName().toString().toLowerCase());
 			currentTarget = BuildTarget.getLessSpecificTarget(currentTarget);
 		}
 		
-		rootOrder.push("default");
+		rootOrder.add("default");
 	}
 	
 	/**
@@ -63,14 +70,8 @@ class ProjectFileReader
 				rootOrder.remove(root);
 			}
 		}
-	}
-	
-	/**
-	 * Reads the project.yaml file into memory.
-	 */
-	public function read() : Void
-	{
-		parsedYaml = Yaml.read(path);
+
+		trace(rootOrder.toString());
 	}
 	
 	public function get(key : String) : Dynamic
@@ -80,12 +81,21 @@ class ProjectFileReader
 		{
 			map = parsedYaml.get(root);
 			
-			if (base.exists(key))
-				return base.get(key);
+			if (map.exists(key))
+				return map.get(key);
 		}
 		return null;
 	}
 	
+	public function setPath(filePath : String)
+	{
+		path = filePath;
+	}
+
+	public function setBuildTarget(target : Target)
+	{
+		buildTarget = target;
+	}	
 	
 	
 }
