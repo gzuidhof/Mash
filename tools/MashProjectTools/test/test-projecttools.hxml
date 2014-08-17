@@ -1,0 +1,7 @@
+-cp ../src
+-cp ../../../lib/mcli
+-cp ../../../lib/MassiveLib/src
+-cp ../../../lib/hx-yaml/src
+-main TestMain
+-neko build/projecttoolstest.n
+-cmd (echo "__ Testing Mash Project Tools. __" && neko build/projecttoolstest.n)
