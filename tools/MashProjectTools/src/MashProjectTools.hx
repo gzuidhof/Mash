@@ -3,6 +3,7 @@ package ;
 import neko.Lib;
 import haxe.macro.Context;
 import util.Util;
+import projectgenerator.ProjectGenerator;
 
 /**
  * ...

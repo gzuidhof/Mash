@@ -1,4 +1,4 @@
-package ;
+package projectgenerator ;
 import util.Util;
 import yaml.Yaml;
 
@@ -13,10 +13,12 @@ class ProjectGenerator
 	
 	public function new() 
 	{
-		var proj = {project : { name : "MashGame", width : 800, height : 600 }};
+		var proj = {project : { name : "MashGame", width : 800, height : 600}};
 		var s = Yaml.render(proj);
 		
 		Util.print(s);
 	}
+	
+	
 	
 }
