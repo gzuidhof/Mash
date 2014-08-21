@@ -35,18 +35,17 @@ class MashEngine extends Game
 	 */
 	public var frameCount : Int = 0;
 	
-	
-	public function new() 
+	public function new(?scene : MashScene) 
 	{
 		super(Loader.the.name, false);
-		mashScene = new MashScene("_newScene");
-		ecs = mashScene.ecs;
-	}
-	
-	public function new(scene : MashScene) 
-	{
-		super(Loader.the.name, false);
-		mashScene = scene;
+		if (scene == null)
+		{
+			mashScene = new MashScene("_newScene");
+		}
+		else
+		{
+			mashScene = scene;
+		}
 		ecs = mashScene.ecs;
 	}	
 	
