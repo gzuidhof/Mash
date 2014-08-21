@@ -31,13 +31,11 @@ class MashLoadingScreen extends Game
 		this.logo = Loader.the.getImage("mashlogo");
 		this.logoLight = Loader.the.getImage("mashlogo-light");
 	}
-	
-	private var i = 0;
+
 	
 	override public function render(painter: kha.Painter): Void 
 	{
 		startRender(painter);
-		i++;
 		//Draw background
 		painter.setColor(kha.Color.fromBytes(240, 240, 240));
 		painter.fillRect(0, 0, width, height);
