@@ -18,7 +18,6 @@ class MashScene
 		this.name = name;
 	}
 	
-	
 	public function update(deltaTime : Float) 
 	{
 		ecs.update(deltaTime);

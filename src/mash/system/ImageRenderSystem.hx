@@ -43,7 +43,7 @@ class ImageRenderSystem extends MashSystem
 	{
 		for (node in ecs.getNodeList(ImageRenderNode))
 		{
-			mashEngine.painter.drawImage(images.get(node.imageDisplay.imageName), node.position.x, node.position.y);
+			mashEngine.graphics2.drawImage(images.get(node.imageDisplay.imageName), node.position.x, node.position.y);
 		}
 		
 	}

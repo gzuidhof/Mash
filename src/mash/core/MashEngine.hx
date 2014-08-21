@@ -3,8 +3,9 @@ package mash.core;
 import ash.core.Engine;
 import ash.core.Entity;
 import haxe.Int64;
+import kha.Framebuffer;
+import kha.Image;
 import kha.Game;
-import kha.Painter;
 import kha.Color;
 import kha.Sys;
 import kha.Loader;
@@ -16,7 +17,10 @@ class MashEngine extends Game
 {
 	
 	public var mashScene : MashScene;
-	public var painter : Painter;
+	public var backbuffer: Image;
+	public var graphics2: kha.graphics2.Graphics;
+	
+	private var initialized = false;
 	
 	/**
 	 * Time (in seconds) since start of application.
@@ -44,7 +48,10 @@ class MashEngine extends Game
 	
 	override public function init(): Void 
 	{ 
+		backbuffer = Image.createRenderTarget(width, height);
+		graphics2 = backbuffer.g2;
 		lastFrameTime = timeSinceStart = Sys.getTime();
+		initialized = true;
 	}
 	
 	override public function update(): Void 
@@ -68,17 +75,20 @@ class MashEngine extends Game
 	}
 	
 	
-	override public function render(painter: Painter): Void
+	override public function render(frame: kha.Framebuffer): Void
 	{
-		this.painter = painter;
+		if (!initialized) return;
 		
 		deltaTime = Sys.getTime() - lastFrameTime;
 		lastFrameTime = Sys.getTime();
 		
-		startRender(painter);
+		graphics2.begin();
 		mashScene.update(deltaTime);
-		endRender(painter);
+		graphics2.end();
 		
-		frameCount++;
+		startRender(frame);
+		kha.Scaler.scale(backbuffer, frame, kha.Sys.screenRotation);
+		endRender(frame);
+		
 	}
 }

@@ -1,9 +1,12 @@
 package mash.core;
 
 import kha.Configuration;
+import kha.Framebuffer;
 import kha.Image;
 import kha.Game;
 import kha.Loader;
+import kha.Scaler;
+import kha.Sys;
 import mash.serialization.scene.HaxeStdSceneSerializer;
 
 /**
@@ -13,11 +16,12 @@ import mash.serialization.scene.HaxeStdSceneSerializer;
 class MashLoadingScreen extends Game
 {
 	private var sceneToLoad: String;
-	
 	private var engine: MashEngine;
 	
 	private var logo: Image;
 	private var logoLight: Image;
+	
+	private var backbuffer: Image;
 	
 	public function new(sceneToLoad:String) 
 	{
@@ -27,13 +31,19 @@ class MashLoadingScreen extends Game
 	
 	override public function init(): Void 
 	{
-		Loader.the.loadRoom("mashloadingscreen", onLogoLoaded);
+		backbuffer = Image.createRenderTarget(width, height);
 
+		Loader.the.loadRoom("mashloadingscreen", startLoading);
+	}
+
+	private function startLoading() : Void
+	{
+		onLogoLoaded();
 		engine = new MashEngine();
 		//Do actual loading, load assets of the first scene into memory.
 		engine.loadScene(sceneToLoad, startMashEngine);
 	}
-
+	
 	private function startMashEngine(): Void
 	{
 		Configuration.setScreen(new MashEngine());
@@ -46,12 +56,14 @@ class MashLoadingScreen extends Game
 		this.logoLight = Loader.the.getImage("mashlogo-light");
 	}
 	
-	override public function render(painter: kha.Painter): Void 
+	override public function render(frame: Framebuffer): Void 
 	{
-		startRender(painter);
+		var painter = backbuffer.g2;
+		
+		painter.begin();
 		
 		//Draw background
-		painter.setColor(kha.Color.fromBytes(240, 240, 240));
+		painter.color = kha.Color.fromBytes(240, 240, 240);
 		painter.fillRect(0, 0, width, height);
 		
 		if (logo != null)
@@ -60,23 +72,26 @@ class MashLoadingScreen extends Game
 		}
 		
 		drawLoadingBar(painter);
-	
-		endRender(painter);
+		painter.end();
+		
+		startRender(frame);
+		Scaler.scale(backbuffer, frame, Sys.screenRotation);
+		endRender(frame);
 	}
 	
-	private function renderLogo(painter: kha.Painter):Void 
+	private function renderLogo(painter: kha.graphics2.Graphics):Void 
 	{
 		//Draw logo backdrop
 		painter.drawImage(logoLight, width / 2 - logoLight.width / 2, height / 2 - logoLight.height / 2);
 		
 		//Draw logo, transparancy doesn't seem to be working yet.
-		painter.setColor(kha.Color.fromFloats(1.0, 1.0, 1.0, Loader.the.getLoadPercentage()/100));
+		painter.color = kha.Color.fromFloats(1.0, 1.0, 1.0, Loader.the.getLoadPercentage()/100);
 		painter.drawImage(logo, width / 2 - logo.width/2, height / 2 - logo.height/2);
 	}
 	
-	private function drawLoadingBar(painter: kha.Painter):Void 
+	private function drawLoadingBar(painter: kha.graphics2.Graphics):Void 
 	{
-		painter.setColor(kha.Color.fromBytes(255, 255, 255, 255));
+		painter.color = kha.Color.fromBytes(255, 255, 255);
 		painter.fillRect(0, height / 2 + 80 , Loader.the.getLoadPercentage() * width / 100, 20);
 	}
 	
