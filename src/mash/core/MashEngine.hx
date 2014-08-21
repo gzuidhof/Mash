@@ -38,32 +38,23 @@ class MashEngine extends Game
 	
 	public function new() 
 	{
-		super("Mash", false);
-		mashScene = new MashScene("BaseScene");
+		super(Loader.the.name, false);
+		mashScene = new MashScene("_newScene");
 		ecs = mashScene.ecs;
 	}
+	
+	public function new(scene : MashScene) 
+	{
+		super(Loader.the.name, false);
+		mashScene = scene;
+		ecs = mashScene.ecs;
+	}	
 	
 	
 	override public function init(): Void 
 	{ 
-		Loader.the.loadRoom("level", levelLoaded);
-	}
-	
-	private function levelLoaded(): Void 
-	{
 		lastFrameTime = timeSinceStart = Sys.getTime();
-		
-		ecs.addSystem(new ImageRenderSystem(this), 0);
-		var ent: Entity = new Entity("Test Lambda");
-		ent.add(new Position(5, 0));
-		ent.add(new ImageDisplay("lambda"));
-		ecs.addEntity(ent);
-		
-		for (s in Loader.the.getAvailableImages())
-			trace(s);
 	}
-	
-	
 	
 	override public function update(): Void 
 	{

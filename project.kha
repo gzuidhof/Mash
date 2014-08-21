@@ -11,19 +11,26 @@
         {
 			"id": "75093bc0-0bd0-11e4-9191-0800200c9a66",
             "type": "image",
-            "file": "assets/graphics/lambda.jpg",
-            "name": "lambda"
+            "file": "assets/graphics/mashlogo-light.png",
+            "name": "mashlogo-light"
+		},
+		{
+			"id": "81ec8550-28e9-11e4-8c21-0800200c9a66",
+            "type": "image",
+            "file": "assets/graphics/mashlogo.png",
+            "name": "mashlogo"
 		}
 	],
 	"rooms":
 	[
 		{
             "id" : "c06ef390-43e7-11e3-8f96-0800200c9a66",
-            "name": "level",
+            "name": "mashloadingscreen",
             "neighbours": [],
             "assets":
             [
-                "75093bc0-0bd0-11e4-9191-0800200c9a66"
+                "75093bc0-0bd0-11e4-9191-0800200c9a66",
+				"81ec8550-28e9-11e4-8c21-0800200c9a66"
             ]
         }
 	],
