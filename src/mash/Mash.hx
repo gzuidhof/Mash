@@ -1,13 +1,10 @@
 package mash;
 
-import kha.Game;
 import mash.core.MashEngine;
-import kha.Starter;
-import kha.Loader;
 
 class Mash {
 	public function new() {
-		var starter = new Starter();
+		var starter = new kha.Starter();
 		starter.start(new MashEngine());
 	}
 }
