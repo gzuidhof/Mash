@@ -3,6 +3,7 @@ package mash.core;
 import kha.Image;
 import kha.Game;
 import kha.Loader;
+import mash.serialization.scene.HaxeStdSceneSerializer;
 
 /**
  * Default loading screen for a Mash game.
@@ -23,17 +24,40 @@ class MashLoadingScreen extends Game
 	
 	override public function init(): Void 
 	{
-		Loader.the.loadRoom("mashloadingscreen", startLoader);
+		Loader.the.loadRoom("mashloadingscreen", onLogoLoaded);
+		//Do actual loading.
+		Loader.the.loadRoom(sceneToLoad, loadMashEngine);
 	}
-	
-	public function startLoader(): Void
+
+	private function onLogoLoaded()
 	{
 		this.logo = Loader.the.getImage("mashlogo");
 		this.logoLight = Loader.the.getImage("mashlogo-light");
-		
-		//Do actual loading here.
 	}
-
+	
+	private function loadMashEngine(): Void
+	{
+		var scene = loadECSScene();
+		startEngine(scene);
+	}
+	
+	private function loadECSScene(): MashScene
+	{
+		
+		if (Loader.the.isBlobAvailable(sceneToLoad + ".hxscene"))
+		{
+			var text = Loader.the.getBlob(sceneToLoad + ".hxscene").toString();
+			var sceneSerializer = new HaxeStdSceneSerializer();
+			return sceneSerializer.deSerializeScene(text);
+		}
+		
+		return null;
+	}
+	
+	private function startEngine(scene : MashScene)
+	{
+		new MashEngine(scene);
+	}
 	
 	override public function render(painter: kha.Painter): Void 
 	{
@@ -49,11 +73,11 @@ class MashLoadingScreen extends Game
 		}
 		
 		drawLoadingBar(painter);
-
+	
 		endRender(painter);
 	}
 	
-	function renderLogo(painter: kha.Painter):Void 
+	private function renderLogo(painter: kha.Painter):Void 
 	{
 		//Draw logo backdrop
 		painter.drawImage(logoLight, width / 2 - logoLight.width / 2, height / 2 - logoLight.height / 2);
@@ -63,7 +87,7 @@ class MashLoadingScreen extends Game
 		painter.drawImage(logo, width / 2 - logo.width/2, height / 2 - logo.height/2);
 	}
 	
-	function drawLoadingBar(painter: kha.Painter):Void 
+	private function drawLoadingBar(painter: kha.Painter):Void 
 	{
 		painter.setColor(kha.Color.fromBytes(255, 255, 255, 255));
 		painter.fillRect(0, height / 2 + 80 , Loader.the.getLoadPercentage() * width / 100, 20);
