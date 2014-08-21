@@ -49,7 +49,7 @@ class MashLoadingScreen extends Game
 		}
 		
 		drawLoadingBar();
-=
+
 		endRender(painter);
 	}
 	
