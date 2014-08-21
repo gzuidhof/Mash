@@ -16,7 +16,6 @@ class MashEngine extends Game
 {
 	
 	public var mashScene : MashScene;
-	public var ecs : Engine;
 	public var painter : Painter;
 	
 	/**
@@ -35,20 +34,11 @@ class MashEngine extends Game
 	 */
 	public var frameCount : Int = 0;
 	
-	public function new(?scene : MashScene) 
+	public function new() 
 	{
 		super(Loader.the.name, false);
 		
-		if (scene == null)
-		{
-			mashScene = new MashScene("_newScene");
-		}
-		else
-		{
-			mashScene = scene;
-		}
-		
-		ecs = mashScene.ecs;
+		mashScene = new MashScene("_newScene");
 	}	
 	
 	
@@ -61,6 +51,22 @@ class MashEngine extends Game
 	{
 		
 	}
+	
+	public function loadScene(sceneName: String, callback: Void->Void) 
+	{
+		Loader.the.loadRoom(sceneName, callback);
+	}
+	
+	public function startScene(sceneName: String)
+	{
+		if (Loader.the.isBlobAvailable(sceneName + ".hxscene"))
+		{
+			var text = Loader.the.getBlob(sceneName + ".hxscene").toString();
+			var sceneSerializer = new mash.serialization.scene.HaxeStdSceneSerializer();
+			mashScene = sceneSerializer.deSerializeScene(text);
+		}
+	}
+	
 	
 	override public function render(painter: Painter): Void
 	{

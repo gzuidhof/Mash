@@ -7,7 +7,7 @@ class Mash {
 	public function new() {
 		var starter = new kha.Starter();
 		//starter.start(new MashEngine());
-		starter.start(new MashLoadingScreen("todo"));
+		starter.start(new MashLoadingScreen("scene1"));
 	}
 }
 

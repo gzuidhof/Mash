@@ -1,5 +1,6 @@
 package mash.core;
 
+import kha.Configuration;
 import kha.Image;
 import kha.Game;
 import kha.Loader;
@@ -11,8 +12,9 @@ import mash.serialization.scene.HaxeStdSceneSerializer;
  */
 class MashLoadingScreen extends Game
 {
-	private var gameName: String;
 	private var sceneToLoad: String;
+	
+	private var engine: MashEngine;
 	
 	private var logo: Image;
 	private var logoLight: Image;
@@ -20,43 +22,28 @@ class MashLoadingScreen extends Game
 	public function new(sceneToLoad:String) 
 	{
 		super(Loader.the.name, false);
+		this.sceneToLoad = sceneToLoad;
 	}
 	
 	override public function init(): Void 
 	{
 		Loader.the.loadRoom("mashloadingscreen", onLogoLoaded);
-		//Do actual loading.
-		Loader.the.loadRoom(sceneToLoad, loadMashEngine);
+
+		engine = new MashEngine();
+		//Do actual loading, load assets of the first scene into memory.
+		engine.loadScene(sceneToLoad, startMashEngine);
 	}
 
+	private function startMashEngine(): Void
+	{
+		Configuration.setScreen(new MashEngine());
+	}
+	
+	
 	private function onLogoLoaded()
 	{
 		this.logo = Loader.the.getImage("mashlogo");
 		this.logoLight = Loader.the.getImage("mashlogo-light");
-	}
-	
-	private function loadMashEngine(): Void
-	{
-		var scene = loadECSScene();
-		startEngine(scene);
-	}
-	
-	private function loadECSScene(): MashScene
-	{
-		
-		if (Loader.the.isBlobAvailable(sceneToLoad + ".hxscene"))
-		{
-			var text = Loader.the.getBlob(sceneToLoad + ".hxscene").toString();
-			var sceneSerializer = new HaxeStdSceneSerializer();
-			return sceneSerializer.deSerializeScene(text);
-		}
-		
-		return null;
-	}
-	
-	private function startEngine(scene : MashScene)
-	{
-		new MashEngine(scene);
 	}
 	
 	override public function render(painter: kha.Painter): Void 
