@@ -21,8 +21,8 @@ class TestSystemSerialization extends TestCase
 	{
 		//First create the scene, with some systems, to be serialized.
 		testScene = new MashScene("TestScene");
-		testScene.ash.addSystem(new TestSystemA(), 1);
-		testScene.ash.addSystem(new TestSystemB(), 0);
+		testScene.ecs.addSystem(new TestSystemA(), 1);
+		testScene.ecs.addSystem(new TestSystemB(), 0);
 		
 	}
 	
@@ -44,14 +44,14 @@ class TestSystemSerialization extends TestCase
 	
 	public function sceneAssertions(scene: MashScene)
 	{
-		assertEquals(2, Lambda.count(scene.ash.systems));
+		assertEquals(2, Lambda.count(scene.ecs.systems));
 		
-		assertFalse(scene.ash.getSystem(TestSystemA) == null);
-		assertFalse(scene.ash.getSystem(TestSystemB) == null);
-		assertTrue(scene.ash.getSystem(TestSystemC) == null);
+		assertFalse(scene.ecs.getSystem(TestSystemA) == null);
+		assertFalse(scene.ecs.getSystem(TestSystemB) == null);
+		assertTrue(scene.ecs.getSystem(TestSystemC) == null);
 		
-		assertEquals(1, scene.ash.getSystem(TestSystemA).priority);
-		assertEquals(0, scene.ash.getSystem(TestSystemB).priority);
+		assertEquals(1, scene.ecs.getSystem(TestSystemA).priority);
+		assertEquals(0, scene.ecs.getSystem(TestSystemB).priority);
 	}
 	
 	

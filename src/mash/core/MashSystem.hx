@@ -24,7 +24,7 @@ class MashSystem extends System
 		if ( mash != null) 
 		{
 			this.scene = mash.mashScene;
-			this.ecs = scene.ash;
+			this.ecs = scene.ecs;
 		}
 		
 		init();

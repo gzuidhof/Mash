@@ -21,30 +21,30 @@ class TestScene extends TestCase
 	public function testScene()
 	{
 		//Scene creates ash engine
-		assertFalse(scene.ash == null);
+		assertFalse(scene.ecs == null);
 		
 		//Scene starts without any entities or systems
-		assertTrue(Lambda.empty(scene.ash.entities));
-		assertTrue(Lambda.empty(scene.ash.systems));
+		assertTrue(Lambda.empty(scene.ecs.entities));
+		assertTrue(Lambda.empty(scene.ecs.systems));
 		
 		//Test adding of entity
 		var tEntity1: Entity = new Entity("TestEntity1");
-		scene.ash.addEntity(tEntity1);
-		assertEquals(1, Lambda.count(scene.ash.entities));
+		scene.ecs.addEntity(tEntity1);
+		assertEquals(1, Lambda.count(scene.ecs.entities));
 		
 		
 		//Test of adding another entity
 		var tEntity2: Entity = new Entity("TestEntity2");
-		scene.ash.addEntity(tEntity2);
-		assertEquals(2, Lambda.count(scene.ash.entities));
+		scene.ecs.addEntity(tEntity2);
+		assertEquals(2, Lambda.count(scene.ecs.entities));
 		
 		//Test removing an entity
-		scene.ash.removeEntity(tEntity1);
-		assertEquals(1, Lambda.count(scene.ash.entities));
+		scene.ecs.removeEntity(tEntity1);
+		assertEquals(1, Lambda.count(scene.ecs.entities));
 		
 		//Test removing all entities
-		scene.ash.removeAllEntities();
-		assertTrue(Lambda.empty(scene.ash.entities));
+		scene.ecs.removeAllEntities();
+		assertTrue(Lambda.empty(scene.ecs.entities));
 	}
 	
 	public function testEntityComponentOperations()
@@ -73,23 +73,23 @@ class TestScene extends TestCase
 	public function testNodeCreation()
 	{
 		var tEntity1: Entity = new Entity("TestEntity1");
-		scene.ash.addEntity(tEntity1);
+		scene.ecs.addEntity(tEntity1);
 		
 		//Nodelist starts empty
-		assertTrue(Lambda.empty(scene.ash.getNodeList(TestNode)));
+		assertTrue(Lambda.empty(scene.ecs.getNodeList(TestNode)));
 		
 		var componentA: TestComponentA = new TestComponentA();
 		var componentB: TestComponentB = new TestComponentB();
 		
 		//Test Node Creation
 		tEntity1.add(componentA);
-		assertTrue(Lambda.empty(scene.ash.getNodeList(TestNode)));
+		assertTrue(Lambda.empty(scene.ecs.getNodeList(TestNode)));
 		tEntity1.add(componentB);
-		assertEquals(1, Lambda.count(scene.ash.getNodeList(TestNode)));
+		assertEquals(1, Lambda.count(scene.ecs.getNodeList(TestNode)));
 		
 		//Test Node Removal
 		tEntity1.remove(TestComponentA);
-		assertTrue(Lambda.empty(scene.ash.getNodeList(TestNode)));
+		assertTrue(Lambda.empty(scene.ecs.getNodeList(TestNode)));
 	}
 	
 	

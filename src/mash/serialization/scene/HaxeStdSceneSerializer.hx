@@ -29,7 +29,7 @@ class HaxeStdSceneSerializer implements SceneSerializer
 		//Serializing scene entities
 		var entitySaveArray : Array<Dynamic> = new Array<Dynamic>();
 		
-		for (e in scene.ash.entities)
+		for (e in scene.ecs.entities)
 		{
 			entitySaveArray.push( { name : e.name, components: Lambda.array(e.components) } );
 		}
@@ -56,7 +56,7 @@ class HaxeStdSceneSerializer implements SceneSerializer
 			{
 				entity.add(component);
 			}
-			scene.ash.addEntity(entity);
+			scene.ecs.addEntity(entity);
 		}
 		
 		return scene;

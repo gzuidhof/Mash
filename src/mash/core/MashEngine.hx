@@ -40,19 +40,7 @@ class MashEngine extends Game
 	{
 		super("Mash", false);
 		mashScene = new MashScene("BaseScene");
-		ecs = mashScene.ash;
-		
-		//Loader.the.loadRoom("level", init);
-		//trace("asdf");
-		//Loader.the.loadImage("lambda", null);
-		//Loader.the.loadProject(init);
-		
-		
-		
-		
-		
-		
-		
+		ecs = mashScene.ecs;
 	}
 	
 	

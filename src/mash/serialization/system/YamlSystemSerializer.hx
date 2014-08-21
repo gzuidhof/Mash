@@ -20,7 +20,7 @@ class YamlSystemSerializer implements SystemSerializer
 	
 	public function serializeSystems(scene:MashScene):String 
 	{
-		var array= Lambda.array(Lambda.map(scene.ash.systems, function(s) { return { name : Type.getClassName(Type.getClass(s)), priority : s.priority }; }));
+		var array= Lambda.array(Lambda.map(scene.ecs.systems, function(s) { return { name : Type.getClassName(Type.getClass(s)), priority : s.priority }; }));
 		
 		var output = Yaml.render( { systems: array } );
 		
@@ -48,7 +48,7 @@ class YamlSystemSerializer implements SystemSerializer
 		for (entry in array)
 		{
 			var sys : System = cast(Type.createEmptyInstance(Type.resolveClass(entry.get("name"))), System);
-			scene.ash.addSystem(sys, entry.get("priority"));
+			scene.ecs.addSystem(sys, entry.get("priority"));
 		}
 		
 	}
