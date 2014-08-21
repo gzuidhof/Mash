@@ -38,6 +38,7 @@ class MashEngine extends Game
 	public function new(?scene : MashScene) 
 	{
 		super(Loader.the.name, false);
+		
 		if (scene == null)
 		{
 			mashScene = new MashScene("_newScene");
@@ -46,6 +47,7 @@ class MashEngine extends Game
 		{
 			mashScene = scene;
 		}
+		
 		ecs = mashScene.ecs;
 	}	
 	
