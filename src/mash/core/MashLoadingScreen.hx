@@ -16,9 +16,9 @@ class MashLoadingScreen extends Game
 	private var logo: Image;
 	private var logoLight: Image;
 	
-	public function new(gameName:String, sceneToLoad:String) 
+	public function new(sceneToLoad:String) 
 	{
-		super(gameName, false);
+		super(Loader.the.name, false);
 	}
 	
 	override public function init(): Void 
@@ -45,15 +45,15 @@ class MashLoadingScreen extends Game
 		
 		if (logo != null)
 		{
-			renderLogo();
+			renderLogo(painter);
 		}
 		
-		drawLoadingBar();
+		drawLoadingBar(painter);
 
 		endRender(painter);
 	}
 	
-	function renderLogo():Void 
+	function renderLogo(painter: kha.Painter):Void 
 	{
 		//Draw logo backdrop
 		painter.drawImage(logoLight, width / 2 - logoLight.width / 2, height / 2 - logoLight.height / 2);
@@ -63,7 +63,7 @@ class MashLoadingScreen extends Game
 		painter.drawImage(logo, width / 2 - logo.width/2, height / 2 - logo.height/2);
 	}
 	
-	function drawLoadingBar():Void 
+	function drawLoadingBar(painter: kha.Painter):Void 
 	{
 		painter.setColor(kha.Color.fromBytes(255, 255, 255, 255));
 		painter.fillRect(0, height / 2 + 80 , Loader.the.getLoadPercentage() * width / 100, 20);
