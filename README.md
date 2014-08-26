@@ -12,7 +12,7 @@ Planned features:
 Editor à la Unity Editor, but much simpler. Entity Component System approach should make this pretty straightforward.
 
 Tech for this editor
-Node-Webkit, with javascript compiled from Haxe. Allows me to benefit from anything a modern browser can do for GUI.
+atom-shell, with javascript compiled from Haxe. Allows me to benefit from anything a modern browser can do for GUI.
 
 **Scripting**
 
