@@ -23,7 +23,7 @@ Logic of games written in Haxe.
 Built upon [Kha](https://github.com/KTXSoftware/Kha), to allow for targeting everything from html5 to your toaster. Also, no pesky flash imitation.
 
 ====
-Why?
+**Why?**
 
 I think ECS-based architectures are really awesome. Hopefully making a tool like this will allow for rapid prototyping, and a gentle introduction to non-Unity-like ECS (with logic in systems, not the components). 
 
