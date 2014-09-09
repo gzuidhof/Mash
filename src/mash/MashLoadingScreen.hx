@@ -1,12 +1,13 @@
-package mash.core;
+package mash;
 
 import kha.Configuration;
-import kha.Framebuffer;
+import mash.MashLoadingScreen;
 import kha.Image;
 import kha.Game;
 import kha.Loader;
 import kha.Scaler;
 import kha.Sys;
+import kha.Framebuffer;
 import mash.serialization.scene.HaxeStdSceneSerializer;
 
 /**

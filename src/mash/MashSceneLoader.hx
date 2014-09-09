@@ -1,4 +1,4 @@
-package mash.core;
+package mash;
 
 /**
  * Object that loads scenes.

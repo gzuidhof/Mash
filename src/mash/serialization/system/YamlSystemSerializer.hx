@@ -1,6 +1,6 @@
 package mash.serialization.system;
 import ash.core.System;
-import mash.core.MashScene;
+import mash.MashScene;
 import yaml.util.ObjectMap;
 import yaml.Yaml;
 

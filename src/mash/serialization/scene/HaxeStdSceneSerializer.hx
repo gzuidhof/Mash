@@ -1,7 +1,7 @@
 package mash.serialization.scene;
 import haxe.Serializer;
 import haxe.Unserializer;
-import mash.core.MashScene;
+import mash.MashScene;
 import ash.core.Entity;
 
 /**

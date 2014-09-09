@@ -1,8 +1,8 @@
 package ;
 
 import ash.core.Node;
-import mash.core.MashScene;
-import mash.core.MashSystem;
+import mash.MashScene;
+import mash.MashSystem;
 
 class TestNode extends Node<TestNode>
 {

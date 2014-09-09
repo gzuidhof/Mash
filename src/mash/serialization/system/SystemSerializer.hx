@@ -1,5 +1,5 @@
 package mash.serialization.system;
-import mash.core.MashScene;
+import mash.MashScene;
 
 interface SystemSerializer 
 {

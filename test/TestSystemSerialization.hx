@@ -1,7 +1,7 @@
 package ;
 
 import haxe.unit.TestCase;
-import mash.core.MashScene;
+import mash.MashScene;
 import mash.serialization.system.SystemSerializer;
 import mash.serialization.system.YamlSystemSerializer;
 import TestTypes.TestSystemA;

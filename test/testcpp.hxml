@@ -1,0 +1,11 @@
+## CPP
+-main TestEngineMain
+-cp ../src
+-cp ../Kha/Sources
+-cp ../Kha/Backends/Kore
+-cp ../lib/Ash/src
+-cp ../lib/hx-yaml/src
+
+#-D HXCPP_M64
+-cpp build/cpp
+-cmd (echo __ Testing C++ target. __ && cd build && cd cpp && ./TestEngineMain && cd .. && cd ..)

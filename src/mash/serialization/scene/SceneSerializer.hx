@@ -1,6 +1,6 @@
 package mash.serialization.scene;
 
-import mash.core.MashScene;
+import mash.MashScene;
 
 interface SceneSerializer
 {

@@ -2,7 +2,7 @@ package ;
 
 import ash.core.Entity;
 import haxe.unit.TestCase;
-import mash.core.MashScene;
+import mash.MashScene;
 import mash.serialization.scene.HaxeStdSceneSerializer;
 import mash.serialization.scene.SceneSerializer;
 import TestTypes.TestComponentA;

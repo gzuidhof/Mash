@@ -1,7 +1,7 @@
 package mash;
 
-import mash.core.MashEngine;
-import mash.core.MashLoadingScreen;
+import mash.MashEngine;
+import mash.MashLoadingScreen;
 
 class Mash {
 	public function new() {

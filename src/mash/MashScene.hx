@@ -1,4 +1,4 @@
-package mash.core;
+package mash;
 
 import ash.core.Engine;
 import ash.core.Entity;
