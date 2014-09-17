@@ -14,7 +14,7 @@ before_script:
     - sudo apt-get install haxe -y
     - mkdir -p ~/.haxe/lib
     - haxelib setup ~/.haxe/lib
-    - haxelib install hx-yaml
+    - haxelib install yaml
     - haxelib install hx-ash
     - cd test
     - mkdir build
