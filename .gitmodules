@@ -1,6 +1,0 @@
-[submodule "lib/mcli"]
-	path = lib/mcli
-	url = https://github.com/waneck/mcli.git
-[submodule "lib/MassiveLib"]
-	path = lib/MassiveLib
-	url = https://github.com/massiveinteractive/MassiveLib.git
