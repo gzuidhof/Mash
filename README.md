@@ -22,6 +22,8 @@ Logic of games written in Haxe.
 
 Built upon [Kha](https://github.com/KTXSoftware/Kha), to allow for targeting everything from html5 to your toaster. Also, no pesky flash imitation.
 
+Update 17/9: Currently looking into using heaps for rendering and aether for asset management / cross-platform support. See aether-heaps branch.
+
 ====
 **Why?**
 
