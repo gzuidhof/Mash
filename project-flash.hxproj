@@ -31,8 +31,8 @@
   </build>
   <!-- haxelib libraries -->
   <haxelib>
-    <!-- example: <library name="..." /> -->
-	<library name="hx-ash" />
+    <library name="hx-ash" />
+    <library name="hx-yaml" />
   </haxelib>
   <!-- Class files to compile (other referenced classes will automatically be included) -->
   <compileTargets>
