@@ -7,14 +7,15 @@ os:
   - osx
  
 # Install Haxe (and Neko) before running the test.
+# Also install haxelib libraries
 before_script:
     - sudo add-apt-repository ppa:eyecreate/haxe -y
     - sudo apt-get update -y
     - sudo apt-get install haxe -y
     - mkdir -p ~/.haxe/lib
     - haxelib setup ~/.haxe/lib
-	- haxelib install hx-yaml
-	- haxelib install hx-ash
+    - haxelib install hx-yaml
+    - haxelib install hx-ash
     - cd test
     - mkdir build
     - mkdir build/html5
