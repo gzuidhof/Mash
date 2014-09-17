@@ -2,9 +2,7 @@
 
 --macro include('mash', true)
 -cp ../src
--cp ../Kha/Sources
--cp ../Kha/Backends/HTML5
--cp ../lib/Ash/src
+-lib hx-ash
 -cp ../lib/hx-yaml/src
 -js build/html5/test.js
 -main TestEngineMain
@@ -16,9 +14,7 @@
 
 --macro include('mash', true)
 -cp ../src
--cp ../Kha/Sources
--cp ../Kha/Backends/Kore
--cp ../lib/Ash/src
+-lib hx-ash
 -cp ../lib/hx-yaml/src
 -neko build/neko/test.n
 -main TestEngineMain
@@ -30,9 +26,7 @@
 
 --macro include('mash', true)
 -cp ../src
--cp ../Kha/Sources
--cp ../Kha/Backends/Flash
--cp ../lib/Ash/src
+-lib hx-ash
 -cp ../lib/hx-yaml/src
 -swf build/flash/test.swf
 -swf-version 11.6
