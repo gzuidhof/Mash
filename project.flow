@@ -1,0 +1,25 @@
+{
+  project : {
+    name : 'mash',
+    version : '0.1.0',
+    author : 'guido',
+
+    app : {
+      name : 'mash',
+      package : 'mash',
+      main : 'mash.MashEngine'
+    },
+
+    build : {
+      dependencies : {
+        luxe : '*',
+		"hx-ash" : '*'
+      }
+    },
+
+    files : {
+      config : 'config.json',
+      assets : 'assets/'
+    }
+  }
+}

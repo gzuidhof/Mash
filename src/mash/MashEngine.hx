@@ -2,44 +2,20 @@ package mash;
 
 import ash.core.Engine;
 import ash.core.Entity;
-import haxe.Int64;
-import haxe.Timer;
-import mash.component.ImageDisplay;
-import mash.component.Position;
-import mash.system.ImageRenderSystem;
 
-class MashEngine
+class MashEngine extends luxe.Game
 {
 	
 	public var mashScene : MashScene;
-	
-	private var initialized = false;
-	
-	/**
-	 * Time (in seconds) since start of application.
-	 */
-	public var timeSinceStart : Float;
-	public var lastFrameTime : Float;
-	
-	/**
-	 * Time (in seconds) since last frame.
-	 */
-	public var deltaTime : Float;
 	
 	/**
 	 * Frames since start of the application.
 	 */
 	public var frameCount : Int = 0;
 	
-	public function new() 
+	override function ready()
 	{
 		mashScene = new MashScene("_newScene");
-	}	
-	
-	public function init(): Void 
-	{ 
-		lastFrameTime = timeSinceStart = getTime();
-		initialized = true;
 	}
 	
 	public function loadScene(sceneName: String, callback: Void->Void) 
@@ -60,19 +36,10 @@ class MashEngine
 	}
 	
 	
-	public function update(): Void
+	override public function update(dt: Float): Void
 	{
-		if (!initialized) return;
+		frameCount++;
+		mashScene.update(dt);
 		
-		deltaTime = getTime() - lastFrameTime;
-		lastFrameTime = getTime();
-		
-		mashScene.update(deltaTime);
-		
-	}
-	
-	public static function getTime(): Float {
-		return Timer.stamp();
-		//return flash.Lib.getTimer() / 1000.0;
 	}
 }

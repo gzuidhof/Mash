@@ -12,16 +12,16 @@ before_script:
     - sudo add-apt-repository ppa:eyecreate/haxe -y
     - sudo apt-get update -y
     - sudo apt-get install haxe -y
+    - sudo apt-get install gcc-multilib g++-multilib -y
     - mkdir -p ~/.haxe/lib
     - haxelib setup ~/.haxe/lib
     - haxelib install yaml
     - haxelib install hx-ash
+    - haxelib git flow https://github.com/underscorediscovery/flow.git
+    - haxelib git snow https://github.com/underscorediscovery/snow.git
+    - haxelib git luxe https://github.com/underscorediscovery/luxe.git
     - cd test
-    - mkdir build
-    - mkdir build/html5
-    - mkdir build/neko
-    - mkdir build/flash
  
 # Run the test!
 script:
-  - haxe test.hxml
+  - haxelib run flow run

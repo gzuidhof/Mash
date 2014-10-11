@@ -1,8 +1,7 @@
 *.n
 *.swf
 *.build
-/test/build
-/build
+bin
 
 .DS_Store
 Thumbs.db

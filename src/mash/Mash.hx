@@ -2,7 +2,7 @@ package mash;
 
 import mash.MashEngine;
 
-class Mash {
+class Mash{
 	public function new() {
 		new MashEngine();
 	}
