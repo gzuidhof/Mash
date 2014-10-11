@@ -1,4 +1,8 @@
 {
+  config : {
+	has_window : false
+  },
+
   project : {
     name : 'mash tests',
     version : '1.0.0',
