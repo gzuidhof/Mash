@@ -2,6 +2,11 @@ package;
 
 class TestEngineMain extends luxe.Game{
     
+	override function config( config:AppConfig ) {
+		config.has_window = false;
+		return config;
+	} //config
+	
 	override function ready() 
 	{
 		super.ready();
