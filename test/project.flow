@@ -1,6 +1,8 @@
 {
-  config : {
-	has_window : false
+  snow : {
+	config : {
+		has_window : false
+	}
   },
 
   project : {
