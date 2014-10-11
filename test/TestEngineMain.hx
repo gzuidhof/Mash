@@ -1,5 +1,7 @@
 package;
 
+import snow.types.Types;
+
 class TestEngineMain extends luxe.Game{
     
 	override function config( config:AppConfig ) {
