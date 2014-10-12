@@ -1,7 +1,5 @@
 package mash.component;
 
-import kha.Image;
-
 class ImageDisplay
 {
 

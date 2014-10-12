@@ -1,0 +1,33 @@
+{
+  snow : {
+	config : {
+		has_window : false
+	}
+  },
+
+  project : {
+    name : 'mash tests',
+    version : '1.0.0',
+    author : 'guido',
+
+    app : {
+      name : 'RunTests',
+	  codepaths : ['./', '../src'],
+      package : 'com.mash.test',
+      main : 'TestEngineMain'
+    },
+	
+    build : {
+      dependencies : {
+        luxe : '*',
+		snow : '*',
+		"hx-ash" : '*',
+		yaml : '*'
+      }
+    },
+
+    files : {
+      assets : 'assets/'
+    }
+  }
+}
