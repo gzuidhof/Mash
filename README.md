@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/Rahazan/Mash.png?label=ready&title=Ready)](https://waffle.io/Rahazan/Mash)
 Mash
 ====
 
